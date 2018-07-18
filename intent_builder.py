@@ -26,7 +26,7 @@ class IntentBuilder(object):
             self._create_intent_recursive(self.root_intents, '', '', '', [])
             return self.list_intents()
         except:
-            print("Unexpected error:", sys.exc_info()[0])
+            print("Unexpected error:", sys.exc_info())
             return
 
     def list_intents(self):
