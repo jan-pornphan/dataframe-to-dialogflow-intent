@@ -5,7 +5,6 @@ from message_handler import handle_message
 
 
 def dataframe_to_intent(display_name, df, root_id, parent_id, input_context_names, output_contexts, action):
-    # TODO: Add fallback as option
     training_phrases = _get_training_phrases(df['training_phrases'].dropna())
     messages = _get_messages(df[['response_type', 'response','platform']].dropna())
     fallback = _get_fallback(df['fallback'].dropna().values[0])

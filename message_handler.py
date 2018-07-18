@@ -8,9 +8,7 @@ platform_type = {
 }
 
 
-def handle_message(response, response_type, platform):
-    #TODO: - handle custom payload Facebook
-    #TODO: - handle text, custom payload Default
+def handle_message(response, response_type, platform):    
     if response_type == 'quick reply':
         return _handle_quick_reply(response, platform)
     elif response_type == 'card':
