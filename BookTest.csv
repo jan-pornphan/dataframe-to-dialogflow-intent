@@ -1,29 +1,54 @@
-root_intent,parent_intent,intent_name,training_phrases,response_type,response
-intent1,intent1,intent1,hi,text,adsd
-intent1,intent1,intent1,hello,text,ffa
-intent1,intent1,intent1,hey,text,sfg
+root_intent,parent_intent,intent_name,training_phrases,response_type,response,platform,fallback
+intent1,intent1,intent1,hi,payload,"{
+    ""type"": ""location"",
+    ""title"": ""my location"",
+    ""address"": ""_150-0002 _______________"",
+    ""latitude"": 35.65910807942215,
+    ""longitude"": 139.70372892916203
+}",default,FALSE
+intent1,intent1,intent1,hello,payload,"{
+    ""attachment"": {
+      ""type"": ""template"",
+      ""payload"": {
+        ""template_type"": ""open_graph"",
+        ""elements"": [
+          {
+            ""url"": ""https://www.google.com/maps/place/SCB+Park+Plaza/@13.8269923,100.5619,17z/data=!3m1!4b1!4m5!3m4!1s0x30e29cf83589f3cf:0x264ce22e7a3ed5bd!8m2!3d13.8269871!4d100.5640887"",
+            ""buttons"": [
+              {
+                ""type"": ""web_url"",
+                ""url"": ""https://www.google.com/maps/place/SCB+Park+Plaza/@13.8269923,100.5619,17z/data=!3m1!4b1!4m5!3m4!1s0x30e29cf83589f3cf:0x264ce22e7a3ed5bd!8m2!3d13.8269871!4d100.5640887"",
+                ""title"": ""View More""
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }",facebook,FALSE
+intent1,intent1,intent1,hey,text,sfg,facebook,FALSE
 intent1,intent1,intent1,tm,quick reply,"{""title"" : ""this is a title"",
-""quick_replies"" : ""one,two,three,four,five""}"
-intent1,intent1,intent11,a,text,"erqw, efefe"
-intent1,intent1,intent11,a,text,twqre
+""quick_replies"" : ""one,two,three,four,five""}",facebook,FALSE
+intent1,intent1,intent11,a,text,"erqw, efefe",facebook,FALSE
+intent1,intent1,intent11,a,text,twqre,facebook,FALSE
 intent1,intent1,intent11,hgf,card,"{""title"" : ""this is a title"",
 ""subtitle"" : ""this is subtitle"",
 ""image_uri"" : ""https://firebasestorage.googleapis.com/v0/b/abakatsu-f7fc8.appspot.com/o/menu_1040.jpg?alt=media&token=572be640-fa15-49ca-8fe8-6364dbf39e5b"",
-""button"" : ""button1, button2,button3""}"
+""button"" : ""button1, button2,button3""}",facebook,FALSE
 intent1,intent1,intent11,ddc,card,"{""title"" : ""this is a title2"",
 ""subtitle"" : ""this is subtitle2"",
 ""image_uri"" : ""https://firebasestorage.googleapis.com/v0/b/abakatsu-f7fc8.appspot.com/o/menu_1040.jpg?alt=media&token=572be640-fa15-49ca-8fe8-6364dbf39e5b"",
-""button"" : ""button1, button2""}"
-intent1,intent11,intent111,b,text,qwe
-intent1,intent11,intent111,b,text,req
-intent1,intent11,intent112,ccc,text,fsad
-intent1,intent1,intent12,aa,text,erqw
-intent1,intent1,intent12,aa,text,twqre
-intent1,intent1,intent12,aa,text,
-intent2,intent2,intent2,bye,text,ok
-intent2,intent2,intent2,later,text,dfgh
-intent1,intent111,intent1111,bb,text,dafs
-intent1,intent111,intent1111,bb,text,
-intent1,intent111,intent1112,bbbb,text,a
-intent1,intent112,intent1121,qq,text,
-intent1,intent112,intent1121,qq,text,a
+""button"" : ""button1, button2""}",,FALSE
+intent1,intent11,intent111,b,text,qwe,,FALSE
+intent1,intent11,intent111,b,text,req,,FALSE
+intent1,intent11,intent112,ccc,text,fsad,,FALSE
+intent1,intent1,intent12,aa,text,erqw,,FALSE
+intent1,intent1,intent12,aa,text,twqre,,FALSE
+intent1,intent1,intent12,aa,text,,,FALSE
+intent2,intent2,intent2,bye,text,ok,,TRUE
+intent2,intent2,intent2,later,text,dfgh,,TRUE
+intent1,intent111,intent1111,bb,text,dafs,,FALSE
+intent1,intent111,intent1111,bb,text,,,FALSE
+intent1,intent111,intent1112,bbbb,text,a,,FALSE
+intent1,intent112,intent1121,qq,text,,,FALSE
+intent1,intent112,intent1121,qq,text,a,,FALSE
