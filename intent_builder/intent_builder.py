@@ -1,10 +1,11 @@
 import dialogflow_v2 as dialogflow
 from dialogflow_v2.types import Context, Intent
-from intent_helper import dataframe_to_intent
+from .intent_helper import dataframe_to_intent
 import sys
 
 
 class IntentBuilder(object):
+    """ Upload intent dataframe to Dialogflow agent """
 
     def __init__(self, project_id, session_id):
         self.project_id = project_id
@@ -16,6 +17,7 @@ class IntentBuilder(object):
             project_id, session_id)
 
     def create_intents(self, df):
+        """ Create Dialogflow intent from intent dataframe """
         try:
             self.parent = self.intents_client.project_agent_path(
                 self.project_id)
@@ -30,10 +32,12 @@ class IntentBuilder(object):
             return
 
     def list_intents(self):
+        """ List all intent of the agent """
         intents = self.intents_client.list_intents(self.parent)
         return [intent.display_name for intent in intents]
 
     def delete_intents(self):
+        """ Delete all intent of the agent """
         intents = self.intents_client.list_intents(self.parent)
         for intent in intents:
             self.intents_client.delete_intent(intent.name)
