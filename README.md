@@ -1,4 +1,4 @@
-# csv-to-dialogflow-intent
+# dataframe-to-dialogflow-intent
 
 csv-to-dialogflow-intent helps create intents in Dialogflow by uploading csv or excel file. 
 
