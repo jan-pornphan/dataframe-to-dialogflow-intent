@@ -1,12 +1,13 @@
+import pandas as pd
 from intent_builder.intent_builder import IntentBuilder
 import os
-import pandas as pd
 import uuid
+from config import config
 
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "dialogflow-sdk-test-f7fbd9c66588.json"
-project_id = 'dialogflow-sdk-test'
+project_id = config['project_id']
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = config['env']
 session_id = uuid.uuid4()
 
-df = pd.read_csv('BookTest.csv')
+df = pd.read_excel(config['filename'], sheet_name=config['sheetname'])
 ib = IntentBuilder(project_id, session_id)
 ib.create_intents(df)
